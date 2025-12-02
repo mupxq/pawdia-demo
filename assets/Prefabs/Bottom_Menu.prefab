@@ -37,14 +37,14 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 42
+        "__id__": 45
       },
       {
-        "__id__": 44
+        "__id__": 47
       }
     ],
     "_prefab": {
-      "__id__": 46
+      "__id__": 49
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -794,10 +794,13 @@
       },
       {
         "__id__": 39
+      },
+      {
+        "__id__": 41
       }
     ],
     "_prefab": {
-      "__id__": 41
+      "__id__": 44
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -938,6 +941,74 @@
     "fileId": "ffhEQ3/eNFQpZjGQdnyMX+"
   },
   {
+    "__type__": "cc.Button",
+    "_name": "",
+    "_objFlags": 0,
+    "__editorExtras__": {},
+    "node": {
+      "__id__": 34
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 42
+    },
+    "clickEvents": [
+      {
+        "__id__": 43
+      }
+    ],
+    "_interactable": true,
+    "_transition": 3,
+    "_normalColor": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_hoverColor": {
+      "__type__": "cc.Color",
+      "r": 211,
+      "g": 211,
+      "b": 211,
+      "a": 255
+    },
+    "_pressedColor": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_disabledColor": {
+      "__type__": "cc.Color",
+      "r": 124,
+      "g": 124,
+      "b": 124,
+      "a": 255
+    },
+    "_normalSprite": null,
+    "_hoverSprite": null,
+    "_pressedSprite": null,
+    "_disabledSprite": null,
+    "_duration": 0,
+    "_zoomScale": 0.95,
+    "_target": null,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "34i4dvKJROf6YE6EAU3lBi"
+  },
+  {
+    "__type__": "cc.ClickEvent",
+    "target": null,
+    "component": "",
+    "_componentId": "",
+    "handler": "",
+    "customEventData": ""
+  },
+  {
     "__type__": "cc.PrefabInfo",
     "root": {
       "__id__": 1
@@ -960,7 +1031,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 43
+      "__id__": 46
     },
     "_contentSize": {
       "__type__": "cc.Size",
@@ -988,7 +1059,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 45
+      "__id__": 48
     },
     "_alignFlags": 4,
     "_target": null,
