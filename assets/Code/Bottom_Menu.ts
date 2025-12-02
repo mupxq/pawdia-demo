@@ -13,6 +13,12 @@ export class Bottom_Menu extends Component {
     @property(Sprite)
     Planning_Page_Sprite_list: Sprite[] = [];
 
+    @property(Sprite)
+    Next_Page_Button_Sprite: Sprite = null;
+
+    @property(Sprite)
+    Go_Back_Button_Sprite: Sprite = null;
+
     private currentPage: number = 0;
 
     start() {
@@ -54,6 +60,17 @@ export class Bottom_Menu extends Component {
             if (this.Planning_Page_Sprite_list[i]) {
                 this.Planning_Page_Sprite_list[i].node.active = true;
             }
+        }
+
+        // Handle button visibility
+        const isLastPage = this.currentPage >= this.Planning_Page_Sprite_list.length - 1;
+
+        if (this.Next_Page_Button_Sprite) {
+            this.Next_Page_Button_Sprite.node.active = !isLastPage;
+        }
+
+        if (this.Go_Back_Button_Sprite) {
+            this.Go_Back_Button_Sprite.node.active = isLastPage;
         }
     }
 
