@@ -2304,7 +2304,7 @@
         "__id__": 74
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 77
@@ -2594,6 +2594,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "Pop_Event_Node": {
+      "__id__": 63
+    },
     "_id": "2aXUrXtb1FSaqbnMHr5EH6"
   },
   {
