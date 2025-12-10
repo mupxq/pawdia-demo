@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Button } from 'cc';
+import { _decorator, Component, Node, Button, Label, director } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('Fishing')
@@ -11,6 +11,9 @@ export class Fishing extends Component {
 
     @property(Node)
     Post_Card: Node = null;
+
+    @property(Node)
+    Status_Label: Node = null;
 
     private eventTimer: number = 0;
     private eventTriggered: boolean = false;
@@ -30,6 +33,16 @@ export class Fishing extends Component {
         // Get the Post_Card node if not set in inspector
         if (!this.Post_Card) {
             this.Post_Card = this.node.getChildByName('Post_Card');
+        }
+
+        // Get the Status_Label node if not set in inspector
+        if (!this.Status_Label) {
+            this.Status_Label = this.node.getChildByName('Status_Label');
+        }
+
+        // Initially hide Status_Label
+        if (this.Status_Label) {
+            this.Status_Label.active = false;
         }
 
         // Add click event listener to the button
@@ -79,10 +92,28 @@ export class Fishing extends Component {
             this.Pop_Event_Node.active = false;
         }
 
-        // Show Post_Card node
-        if (this.Post_Card) {
-            this.Post_Card.active = true;
+        // Show and update Status_Label
+        if (this.Status_Label) {
+            this.Status_Label.active = true;
+            const label = this.Status_Label.getComponent(Label);
+            if (label) {
+                label.string = "明信片生成中";
+            }
         }
+
+        // Schedule the Post_Card to show after 2 seconds
+        this.scheduleOnce(() => {
+            // Hide Status_Label
+            if (this.Status_Label) {
+                this.Status_Label.active = false;
+            }
+
+            // Show Post_Card node
+            if (this.Post_Card) {
+                this.Post_Card.active = true;
+                console.log('Post card displayed!');
+            }
+        }, 2); // 2 seconds delay
     }
 }
 
