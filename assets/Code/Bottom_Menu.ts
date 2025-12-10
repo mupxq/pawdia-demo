@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Prefab, Sprite } from 'cc';
+import { _decorator, Component, Node, Prefab, Sprite, Label, director, SceneAsset } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('Bottom_Menu')
@@ -26,6 +26,9 @@ export class Bottom_Menu extends Component {
     @property(Node)
     Fishing_Loading_Node: Node = null;
 
+    @property(Label)
+    Loading_Label: Label = null;
+
     private currentPage: number = 0;
 
     start() {
@@ -43,7 +46,39 @@ export class Bottom_Menu extends Component {
     Go_Fishing_Button_click() {
         this.Fishing_Loading_Node.active = true;
 
-        
+        const loadingTime = 1500; // 1.5秒加载时间
+        const updateInterval = 100; // 每100毫秒更新一次
+        let elapsedTime = 0;
+
+        // 模拟加载进度更新
+        const interval = setInterval(() => {
+            elapsedTime += updateInterval;
+            let progress = (elapsedTime / loadingTime) * 100;
+
+            if (progress >= 100) {
+                progress = 100;
+                clearInterval(interval);
+
+                // 更新最终进度
+                if (this.Loading_Label) {
+                    this.Loading_Label.string = `100%`;
+                }
+
+                // 加载完成后切换场景
+                director.loadScene('C_fishing', (err) => {
+                    if (err) {
+                        console.error('场景加载失败:', err);
+                        return;
+                    }
+                    console.log('C_fishing场景加载完成');
+                });
+            } else {
+                // 更新进度标签
+                if (this.Loading_Label) {
+                    this.Loading_Label.string = `${Math.floor(progress)}%`;
+                }
+            }
+        }, updateInterval);
     }
 
     next_page() {
@@ -88,7 +123,7 @@ export class Bottom_Menu extends Component {
     }
 
     update(deltaTime: number) {
-
+        // 移除未使用的deltaTime参数警告
     }
 }
 

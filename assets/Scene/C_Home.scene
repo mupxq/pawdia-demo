@@ -992,6 +992,9 @@
     "Fishing_Loading_Node": {
       "__id__": 103
     },
+    "Loading_Label": {
+      "__id__": 112
+    },
     "_id": "21JeCAPfpNHrg/0Fp9PuGN"
   },
   {
@@ -2947,7 +2950,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Loading",
+    "_name": "Loading_Label",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": {
