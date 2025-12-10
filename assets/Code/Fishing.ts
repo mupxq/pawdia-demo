@@ -122,5 +122,14 @@ export class Fishing extends Component {
         // Load the C_Home scene
         director.loadScene('C_Home');
     }
+
+    onClosePostCardClick() {
+        console.log('Close post card clicked! Hiding Post_Card...');
+
+        // Hide Post_Card node
+        if (this.Post_Card) {
+            this.Post_Card.active = false;
+        }
+    }
 }
 
