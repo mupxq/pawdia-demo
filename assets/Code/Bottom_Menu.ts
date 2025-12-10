@@ -24,7 +24,7 @@ export class Bottom_Menu extends Component {
 
     //fishing 场景节点导入
     @property(Node)
-    Fishing_Scene_Node: Node = null;
+    Fishing_Loading_Node: Node = null;
 
     private currentPage: number = 0;
 
@@ -41,7 +41,9 @@ export class Bottom_Menu extends Component {
     }
 
     Go_Fishing_Button_click() {
-        this.Fishing_Scene_Node.active = true;
+        this.Fishing_Loading_Node.active = true;
+
+        
     }
 
     next_page() {
