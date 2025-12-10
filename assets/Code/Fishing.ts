@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Button, Label, director } from 'cc';
+import { _decorator, Component, Node, Button, Label, director, sp } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('Fishing')
@@ -15,11 +15,16 @@ export class Fishing extends Component {
     @property(Node)
     Status_Label: Node = null;
 
+    @property(sp.Skeleton)
+    Fishing_Cat: Node = null;
+
     private eventTimer: number = 0;
     private eventTriggered: boolean = false;
     private randomEventTime: number = 0;
 
     start() {
+        console.log('Fishing scene started!', this.Fishing_Cat);
+
         // Get the Pop_Event node if not set in inspector
         if (!this.Pop_Event_Node) {
             this.Pop_Event_Node = this.node.getChildByName('Pop_Event');
@@ -67,6 +72,14 @@ export class Fishing extends Component {
             if (this.eventTimer >= this.randomEventTime) {
                 this.triggerRandomEvent();
             }
+        }
+    }
+
+    fishing_cat_animation() {
+        if (this.Fishing_Cat) {
+
+            //设置动画为 action_2 循环播放
+            this.Fishing_Cat.getComponent(sp.Skeleton).setAnimation(0, 'action_2', true);
         }
     }
 
