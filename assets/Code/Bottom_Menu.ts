@@ -19,6 +19,13 @@ export class Bottom_Menu extends Component {
     @property(Sprite)
     Go_Back_Button_Sprite: Sprite = null;
 
+    @property(Sprite)
+    Go_Fishing_Button_Sprite: Sprite = null;
+
+    //fishing 场景节点导入
+    @property(Node)
+    Fishing_Scene_Node: Node = null;
+
     private currentPage: number = 0;
 
     start() {
@@ -31,6 +38,10 @@ export class Bottom_Menu extends Component {
 
     Home_Preper_Button_click() {
         this.Fishing_Preparation_Page_Node.active = false;
+    }
+
+    Go_Fishing_Button_click() {
+        this.Fishing_Scene_Node.active = true;
     }
 
     next_page() {
