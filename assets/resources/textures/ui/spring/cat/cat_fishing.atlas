@@ -1,0 +1,104 @@
+
+cat_fishing.png
+size: 2030, 1483
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+assets/bg
+  rotate: true
+  xy: 2, 49
+  size: 1432, 1192
+  orig: 1432, 1192
+  offset: 0, 0
+  index: -1
+assets/body
+  rotate: true
+  xy: 1196, 8
+  size: 442, 271
+  orig: 442, 271
+  offset: 0, 0
+  index: -1
+assets/ears
+  rotate: true
+  xy: 1699, 185
+  size: 252, 322
+  orig: 254, 323
+  offset: 1, 1
+  index: -1
+assets/eye_black
+  rotate: false
+  xy: 1856, 439
+  size: 91, 91
+  orig: 91, 91
+  offset: 0, 0
+  index: -1
+assets/eye_close
+  rotate: true
+  xy: 1947, 1314
+  size: 167, 71
+  orig: 167, 71
+  offset: 0, 0
+  index: -1
+assets/eye_hair
+  rotate: true
+  xy: 1947, 1172
+  size: 140, 74
+  orig: 141, 74
+  offset: 0, 0
+  index: -1
+assets/eye_white
+  rotate: true
+  xy: 1856, 689
+  size: 204, 172
+  orig: 204, 172
+  offset: 0, 0
+  index: -1
+assets/face
+  rotate: false
+  xy: 1196, 452
+  size: 658, 441
+  orig: 658, 484
+  offset: 0, 0
+  index: -1
+assets/foot_back
+  rotate: true
+  xy: 1469, 58
+  size: 392, 228
+  orig: 392, 228
+  offset: 0, 0
+  index: -1
+assets/foot_front
+  rotate: true
+  xy: 1469, 58
+  size: 392, 228
+  orig: 392, 228
+  offset: 0, 0
+  index: -1
+assets/hand_back2
+  rotate: false
+  xy: 1856, 532
+  size: 169, 155
+  orig: 169, 155
+  offset: 0, 0
+  index: -1
+assets/hand_backand1
+  rotate: false
+  xy: 1196, 895
+  size: 749, 586
+  orig: 750, 588
+  offset: 0, 1
+  index: -1
+assets/hand_front
+  rotate: false
+  xy: 1699, 2
+  size: 278, 181
+  orig: 278, 181
+  offset: 0, 0
+  index: -1
+assets/mouth
+  rotate: true
+  xy: 1947, 1060
+  size: 110, 58
+  orig: 110, 58
+  offset: 0, 0
+  index: -1
