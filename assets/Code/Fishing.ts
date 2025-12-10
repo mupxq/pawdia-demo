@@ -1,10 +1,16 @@
-import { _decorator, Component, Node } from 'cc';
+import { _decorator, Component, Node, Button } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('Fishing')
 export class Fishing extends Component {
     @property(Node)
     Pop_Event_Node: Node = null;
+
+    @property(Node)
+    event_button: Node = null;
+
+    @property(Node)
+    Post_Card: Node = null;
 
     private eventTimer: number = 0;
     private eventTriggered: boolean = false;
@@ -13,7 +19,25 @@ export class Fishing extends Component {
     start() {
         // Get the Pop_Event node if not set in inspector
         if (!this.Pop_Event_Node) {
-            this.Pop_Event_Node = this.node.getChildByName('Pop_Event'); 
+            this.Pop_Event_Node = this.node.getChildByName('Pop_Event');
+        }
+
+        // Get the event_button node if not set in inspector
+        if (!this.event_button) {
+            this.event_button = this.node.getChildByName('event_button');
+        }
+
+        // Get the Post_Card node if not set in inspector
+        if (!this.Post_Card) {
+            this.Post_Card = this.node.getChildByName('Post_Card');
+        }
+
+        // Add click event listener to the button
+        if (this.event_button) {
+            const button = this.event_button.getComponent(Button);
+            if (button) {
+                button.node.on(Button.EventType.CLICK, this.onEventButtonClick, this);
+            }
         }
 
         // Generate random time between 15-30 seconds
@@ -44,6 +68,20 @@ export class Fishing extends Component {
             } else {
                 console.warn('Pop_Event node not found!');
             }
+        }
+    }
+
+    onEventButtonClick() {
+        console.log('Event button clicked!');
+
+        // Hide Pop_Event_Node
+        if (this.Pop_Event_Node) {
+            this.Pop_Event_Node.active = false;
+        }
+
+        // Show Post_Card node
+        if (this.Post_Card) {
+            this.Post_Card.active = true;
         }
     }
 }
