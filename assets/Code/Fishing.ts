@@ -45,7 +45,7 @@ export class Fishing extends Component {
             this.Status_Label.active = false;
         }
 
-        // Add click event listener to the button
+        // Add click event listener to the event button
         if (this.event_button) {
             const button = this.event_button.getComponent(Button);
             if (button) {
@@ -114,6 +114,13 @@ export class Fishing extends Component {
                 console.log('Post card displayed!');
             }
         }, 2); // 2 seconds delay
+    }
+
+    onEndingFishingClick() {
+        console.log('Ending fishing clicked! Returning to C_Home scene...');
+
+        // Load the C_Home scene
+        director.loadScene('C_Home');
     }
 }
 
